@@ -15,25 +15,18 @@ class Calculator extends Operations {
 	public function __construct($input)
 	{
 		$this->input = $input;
-
-		$input = $this->formatInput($input);
 		
-		$this->solveEquation($input);
-	}
+		$result = $this->solveEquation($input);
 
-	/**
-	* Remove the white space from the input
-	*
-	* @param string $input input string
-	* @return string formatted string with whitespace removed
-	*/
-	private function formatInput($input)
-	{
-		return str_replace(' ', '', $input);
+		$this->displayOutput($result);
 	}
 
 	private function solveEquation($equation)
 	{
+		if (strpos($equation, array('+', '-', '*', '/')) === false) {
+			return;
+		}
+
 		if (preg_match('/([0-9.*-/+\s]*)(([0-9]+)\s[*]\s([0-9]+))([0-9.*-/+\s]*)/', $equation, $matches)) {
 			$multiply = $this->multiply($matches[3], $matches[4]);
 			$equation = $matches[1] . ' ' . $multiply . ' ' . $matches[5];
@@ -49,6 +42,11 @@ class Calculator extends Operations {
 		}
 
 		return $this->solveEquation($equation);
+	}
+
+	private function displayOutput($output)
+	{
+		echo $output;
 	}
 }
 
