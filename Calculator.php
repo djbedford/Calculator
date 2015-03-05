@@ -34,7 +34,9 @@ class Calculator extends Operations {
 
 	private function solveEquation($equation)
 	{
-
+		if (preg_match('/(.+)\s(([0-9]+)\s[*]\s([0-9]+))\s(.+)/', $equation, $matches)) {
+			$multiply = $this->multiply($matches[3], $matches[4]);
+		}
 	}
 }
 
