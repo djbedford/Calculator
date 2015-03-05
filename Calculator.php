@@ -1,5 +1,7 @@
 <?php
 
+require_once('Operations.php');
+
 /**
 * Simple calculator class
 */
@@ -21,6 +23,11 @@ class Calculator extends Operations {
 		$this->displayOutput($result);
 	}
 
+	/**
+	* Solves the given equation
+	*
+	* @param string $equation the equation to solve
+	* /
 	private function solveEquation($equation)
 	{
 		if (strpos($equation, array('+', '-', '*', '/')) === false) {
@@ -44,6 +51,11 @@ class Calculator extends Operations {
 		return $this->solveEquation($equation);
 	}
 
+	/**
+	* Displays the result of the equation
+	*
+	* @param string $output output to be displayed
+	*/
 	private function displayOutput($output)
 	{
 		echo $output;
