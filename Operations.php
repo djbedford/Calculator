@@ -2,7 +2,7 @@
 /**
 * Contains basic operations for the calculator
 */
-abstract class Operations {
+class Operations {
 
 	/**
 	* Adds two operands

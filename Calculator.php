@@ -30,7 +30,7 @@ class Calculator extends Operations {
 	*/
 	private function solveEquation($equation)
 	{
-		if (strpos($equation, array('+', '-', '*', '/')) === false) {
+		if (!(preg_match('/[+-/*]/', $equation))) {
 			return;
 		}
 
