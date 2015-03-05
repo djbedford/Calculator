@@ -27,7 +27,7 @@ class Calculator extends Operations {
 	* Solves the given equation
 	*
 	* @param string $equation the equation to solve
-	* /
+	*/
 	private function solveEquation($equation)
 	{
 		if (strpos($equation, array('+', '-', '*', '/')) === false) {
