@@ -13,7 +13,7 @@ abstract class Operations {
 	*/
 	public function add($operand1, $operand2)
 	{
-
+		return intval($operand1) + intval($operand2);
 	}
 
 	/**
@@ -25,7 +25,7 @@ abstract class Operations {
 	*/
 	public function subtract($operand1, $operand2)
 	{
-
+		return intval($operand1) - intval($operand2);
 	}
 
 	/**
@@ -37,7 +37,7 @@ abstract class Operations {
 	*/
 	public function multiply($operand1, $operand2)
 	{
-
+		return intval($operand1) * intval($operand2);
 	}
 
 	/**
@@ -49,6 +49,6 @@ abstract class Operations {
 	*/
 	public function divide($operand1, $operand2)
 	{
-
+		return intval($operand1) / intval($operand2);
 	}
 }
